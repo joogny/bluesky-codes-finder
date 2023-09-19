@@ -13,10 +13,10 @@ app.sign_in(username, password)
 
 codes = []
 # pattern to find in tweet text
-pattern = r'\bbsky-social-\w+\b'
+pattern = r'bsky-social-[a-zA-Z0-9]+-[a-zA-Z0-9]+'
 
 
-print("Here are the bluesky codes found: (will be updated every minute):")
+print("Here are the bluesky codes found  (will be updated every 30s):")
 while (True):
     # can't remove bsky.social.* username from searches :(
     tweets = app.search("'bsky-social-'", filter_=SearchFilters.Latest())
